@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './bootstrap.min.css';
 import Header from "./components/Header";
-import NuevaCita from "./components/NuevaCita";
+import Formulario from "./components/Formulario";
 import ListaCitas from "./components/ListaCitas";
 
 class App extends Component {
@@ -23,19 +22,21 @@ class App extends Component {
     return (
         <div className="container">
           <Header
-            titulo='Administrador Pacientes Veterinaria'
+            titulo='Administrador de Pacientes'
           />
-          <div className="row">
-            <div className="col-md-10 mx-auto">
-              <NuevaCita
-                crearNuevaCita={this.crearNuevaCita}
-              />
-            </div>
+          <div className="container">
+            <div className="row">
+                <div className="one-half column">
+                  <Formulario
+                    crearNuevaCita={this.crearNuevaCita}
+                  />
+                </div>
 
-            <div className="mt-5 col-md-10 mx-auto">
-              <ListaCitas
-                citas={this.state.citas}
-              />
+                <div className="one-half column">
+                  <ListaCitas
+                    citas={this.state.citas}
+                  />
+                </div>
             </div>
           </div>
         </div>
